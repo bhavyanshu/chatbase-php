@@ -37,7 +37,17 @@ For more information, read [official documentation](https://chatbase.com/documen
   ```
   Example Response:
   ```
-  {"all_succeeded": true, "responses": [{"message_id": 1212121, "status": "success"}, {"message_id": 13131313, "status": "success"}], "status": 200}
+  {
+    "all_succeeded": true,
+    "responses": [{
+    	"message_id": 1212121,
+    	"status": "success"
+    }, {
+    	"message_id": 13131313,
+    	"status": "success"
+    }],
+    "status": 200
+  }
   ```
 
 - Logging multiple messages at once
