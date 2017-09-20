@@ -1,0 +1,25 @@
+{
+    "name": "bhavyanshu/chatbase-php",
+    "description": "A PHP library for the Chatbase API that helps you integrate chatbase with your PHP app. Note: This is not an official Google product.",
+    "license": "MIT",
+    "keywords": ["chatbase", "bot-analytics"],
+    "homepage": "https://github.com/bhavyanshu/chatbase-php",
+    "authors": [
+        {
+            "name": "Bhavyanshu Parasher",
+            "email": "bhavyanshu.spl@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^5.3|^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChatbaseAPI\\": "src"
+        }
+    }
+}
