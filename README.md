@@ -2,9 +2,17 @@
 
 [![Build Status](https://travis-ci.org/bhavyanshu/chatbase-php.svg?branch=master)](https://travis-ci.org/bhavyanshu/chatbase-php)
 
-A PHP library for the Chatbase API that helps you integrate chatbase with your PHP app. Note: This is not an official Google product.
+A PHP library for the Chatbase API that helps you integrate chatbase with your PHP app.
+
+> Note: This is not an official Google product.
 
 For more information, read [official documentation](https://chatbase.com/documentation/generic)
+
+## Installing
+
+```bash
+composer require bhavyanshu/chatbase-php
+```
 
 ## Example Usage
 
