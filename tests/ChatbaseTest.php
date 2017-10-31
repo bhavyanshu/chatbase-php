@@ -76,6 +76,6 @@ class ChatbaseTest extends TestCase {
     $cb = new Chatbase(getenv('CHATBASE_API_KEY'));
     $cb_data = $cb->agentMessage('userid', 'alexa', 'some message', 'some-intent');
     $result = $cb->send($cb_data);
-    $this->assertEquals($result->status, '400');
+    $this->assertEquals($result->status, '200');
   }
 }
