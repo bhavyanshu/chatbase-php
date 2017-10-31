@@ -56,6 +56,16 @@ class Chatbase {
   }
 
   /**
+  * @method getMilliseconds
+  * MEthod that returns time in milliseconds.
+  * @return float - Time in milliseconds
+  */
+  private function getMilliseconds() {
+    $microtime = round(microtime(true) * 1000);
+    return number_format($microtime, 0, ".", "");
+  }
+
+  /**
   * @method send
   * Helper method to send single message to API endpoint
   *
@@ -92,7 +102,7 @@ class Chatbase {
       'api_key' => $this->API_KEY,
       'type' => 'user',
       'user_id' => $user_id,
-      'time_stamp' => round(microtime(true) * 1000),
+      'time_stamp' => $this->getMilliseconds(),
       'platform' => $platform,
       'message' => $message,
       'intent' => $intent,
@@ -119,7 +129,7 @@ class Chatbase {
       'api_key' => $this->API_KEY,
       'type' => 'agent',
       'user_id' => $user_id,
-      'time_stamp' => round(microtime(true) * 1000),
+      'time_stamp' => $this->getMilliseconds(),
       'platform' => $platform,
       'message' => $message,
       'not_handled' => $not_handled
@@ -173,7 +183,7 @@ class Chatbase {
 
     foreach ($arr_data as $key => $value) {
       $value['api_key'] = $this->API_KEY;
-      $value['time_stamp'] = round(microtime(true) * 1000);
+      $value['time_stamp'] = $this->getMilliseconds();
       $arr_data[$key] = $value;
     }
 
