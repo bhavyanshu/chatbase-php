@@ -23,7 +23,7 @@ composer require bhavyanshu/chatbase-php
   $cb = new Chatbase('YOUR_AGENT_API_KEY');
   ```
 
-- Loggin what User asked for
+- Logging what User asked for
 
   ```php
   //userMessage($user_id, $platform, $message = "", $intent = "", $not_handled = false, $feedback = false)
