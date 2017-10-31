@@ -6,11 +6,11 @@ use PHPUnit\Framework\TestCase;
 class ChatbaseTest extends TestCase {
 
   public function testUserMessage() {
-    $cb = new Chatbase('some-key');
+    $cb = new Chatbase(getenv('CHATBASE_API_KEY'));
     $cb_data = $cb->userMessage('userid', 'alexa', 'some message', 'some-intent');
 
     $expected_data = array(
-      'api_key' => 'some-key',
+      'api_key' => getenv('CHATBASE_API_KEY'),
       'type' => 'user',
       'user_id' => 'userid',
       'time_stamp' => round(microtime(true) * 1000),
@@ -25,11 +25,11 @@ class ChatbaseTest extends TestCase {
   }
 
   public function testAgentMessage() {
-    $cb = new Chatbase('some-key');
+    $cb = new Chatbase(getenv('CHATBASE_API_KEY'));
     $cb_data = $cb->agentMessage('userid', 'alexa', 'some message', 'some-intent');
 
     $expected_data = array(
-      'api_key' => 'some-key',
+      'api_key' => getenv('CHATBASE_API_KEY'),
       'type' => 'agent',
       'user_id' => 'userid',
       'time_stamp' => round(microtime(true) * 1000),
@@ -42,11 +42,11 @@ class ChatbaseTest extends TestCase {
   }
 
   public function testTwoWayMessages() {
-    $cb = new Chatbase('some-key');
+    $cb = new Chatbase(getenv('CHATBASE_API_KEY'));
     $cb_data = $cb->twoWayMessages('userid', 'alexa', 'some user message', 'some agent message', 'some-intent');
 
     $agent_data = array(
-      'api_key' => 'some-key',
+      'api_key' => getenv('CHATBASE_API_KEY'),
       'type' => 'agent',
       'user_id' => 'userid',
       'time_stamp' => round(microtime(true) * 1000),
@@ -55,7 +55,7 @@ class ChatbaseTest extends TestCase {
       'not_handled' => false
     );
     $user_data = array(
-      'api_key' => 'some-key',
+      'api_key' => getenv('CHATBASE_API_KEY'),
       'type' => 'user',
       'user_id' => 'userid',
       'time_stamp' => round(microtime(true) * 1000),
@@ -73,9 +73,9 @@ class ChatbaseTest extends TestCase {
   }
 
   public function testPostRequest() {
-    $cb = new Chatbase('some-key');
+    $cb = new Chatbase(getenv('CHATBASE_API_KEY'));
     $cb_data = $cb->agentMessage('userid', 'alexa', 'some message', 'some-intent');
     $result = $cb->send($cb_data);
-    $this->assertEquals($result->status, '400');
+    $this->assertEquals($result->status, '200');
   }
 }
